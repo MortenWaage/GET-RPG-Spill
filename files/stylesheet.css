@@ -1,10 +1,48 @@
 .gameArea
 {
-    width: 50%;
+    width: 80%;
+    height: 80vh;
     margin: auto;
     display: grid;
-    align-content: start;
-    column-gap: 10px;
-    grid-template-columns: auto auto auto;
+    
+    padding-top: 5%;
+    grid-template-columns: repeat(12, 1fr);
+}
 
+
+.eventLog
+{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 6;
+
+    background-color: lightgray;
+}
+
+.artArea
+{
+    grid-column-start: 3;
+    grid-column-end: 10;
+    grid-row-start: 1;
+    grid-row-end: 6;
+    background-color: lightblue;
+}
+
+.objectList
+{
+    grid-column-start: 10;
+    grid-column-end: 12;
+    grid-row-start: 1;
+    grid-row-end: 6;
+    background-color: lightgray;
+}
+
+.inputBar
+{
+    grid-column-start: 1;
+    grid-column-end: 12;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    background-color:darkslategray;
 }
