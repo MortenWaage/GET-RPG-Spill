@@ -1,0 +1,10 @@
+.gameArea
+{
+    width: 50%;
+    margin: auto;
+    display: grid;
+    align-content: start;
+    column-gap: 10px;
+    grid-template-columns: auto auto auto;
+
+}
