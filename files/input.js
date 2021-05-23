@@ -78,12 +78,12 @@ function getPlayerInput(e)
 
 
 // Utfører funksjonen til den knappen som ble trykket på
-function selectMenuItem(number)
+function selectMenuItem(choice)
 {    
 
 
     // Valg 1
-    if (number == 1 && currentLevel.choice1 != null)
+    if (choice == 1 && currentLevel.choice1 != null)
     {
         eventLogList.push(eventNumber + ': ' + currentLevel.logEvent1);
 
@@ -95,7 +95,7 @@ function selectMenuItem(number)
 
 
     // Valg 2
-    else if (number == 2 && currentLevel.choice2 != null)
+    else if (choice == 2 && currentLevel.choice2 != null)
     {
         eventLogList.push(eventNumber + ': ' + currentLevel.logEvent2);
 
@@ -107,7 +107,7 @@ function selectMenuItem(number)
 
 
     // Valg 3
-    else if (number == 3 && currentLevel.choice3 != null)
+    else if (choice == 3 && currentLevel.choice3 != null)
     {
         eventLogList.push(eventNumber + ': ' + currentLevel.logEvent3);
 
@@ -118,7 +118,7 @@ function selectMenuItem(number)
     }
 
     // Valg 4
-    else if (number == 4 && currentLevel.choice4 != null)
+    else if (choice == 4 && currentLevel.choice4 != null)
     {
         eventLogList.push(eventNumber + ': ' + currentLevel.logEvent4);
 
