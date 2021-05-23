@@ -1,8 +1,7 @@
 .gameArea
 {
-    width: 80%;
-    height: 80vh;
-    margin: auto;
+    width: 1280px;
+    height: 720px;
     display: grid;
     
     padding-top: 5%;
@@ -45,4 +44,7 @@
     grid-row-start: 6;
     grid-row-end: 7;
     background-color:darkslategray;
+
+    text-align: center;
+    font-size: 30px;
 }
