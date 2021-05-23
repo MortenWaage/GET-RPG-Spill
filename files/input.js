@@ -1,9 +1,10 @@
 // KeyCodes for hver knapp. Setter verdien her slik at det blir lettere å bytte hvilke knapper som brukes til hva.
 // KeyCodes kan fåes fra https://keycode.info/
-ButtonOne = "KeyW";
-ButtonTwo = "KeyS";
-ButtonThree = "KeyA";
-ButtonFour = "KeyD";
+ButtonOne = "Digit1";
+ButtonTwo = "Digit2";
+ButtonThree = "Digit3";
+ButtonFour = "Digit4";
+
 
 
 
@@ -13,6 +14,13 @@ var canPressTwo = true;
 var canPressThree = true;
 var canPressFour = true;
 
+function resetInput()
+{
+    canPressOne = true;
+    canPressTwo = true;
+    canPressThree = true;
+    canPressFour = true;
+}
 
 
 // Her sjekker vi om spilleren har sluppet knappen.
@@ -35,6 +43,8 @@ function enablePlayerInput(e)
         canPressFour = true;
     }
 }
+
+
 
 
 
@@ -65,28 +75,81 @@ function getPlayerInput(e)
 }
 
 
+
+
 // Utfører funksjonen til den knappen som ble trykket på
 function selectMenuItem(number)
 {    
-    if (number == 1)
+
+
+    // Valg 1
+    if (number == 1 && currentLevel.choice1 != null)
     {
-        eventLogList.push(eventNumber + ': ' + "Du gikk fremover");
+        eventLogList.push(eventNumber + ': ' + currentLevel.logEvent1);
+
+        if (currentLevel.choiceParameter1 != null)
+            window[currentLevel.choiceResult1](currentLevel.choiceParameter1.toString());
+        else
+            window[currentLevel.choiceResult1]();
     }
-    else if (number == 2)
+
+
+    // Valg 2
+    else if (number == 2 && currentLevel.choice2 != null)
     {
-        eventLogList.push(eventNumber + ': ' + "Du gikk bakover");
+        eventLogList.push(eventNumber + ': ' + currentLevel.logEvent2);
+
+        if (currentLevel.choiceParameter2 != null)
+            window[currentLevel.choiceResult2](currentLevel.choiceParameter2.toString());
+        else
+            window[currentLevel.choiceResult2]();
     }
-    else if (number == 3)
+
+
+    // Valg 3
+    else if (number == 3 && currentLevel.choice3 != null)
     {
-        eventLogList.push(eventNumber + ': ' + "Du gikk til venstre");
+        eventLogList.push(eventNumber + ': ' + currentLevel.logEvent3);
+
+        if (currentLevel.choiceParameter2 != null)
+            window[currentLeve3.choiceResult2](currentLevel.choiceParameter3.toString());
+        else
+            window[currentLevel.choiceResult3]();
     }
-    else if (number == 4)
+
+    // Valg 4
+    else if (number == 4 && currentLevel.choice4 != null)
     {
-        eventLogList.push(eventNumber + ': ' + "Du gikk til høyre");
+        eventLogList.push(eventNumber + ': ' + currentLevel.logEvent4);
+
+        if (currentLevel.choiceParameter4 != null)
+            window[currentLeve3.choiceResult4](currentLevel.choiceParameter4.toString());
+        else
+            window[currentLevel.choiceResult4]();        
     }
+
+
     else
         return;
 
     eventNumber++;
     updateEventLog();
+}
+
+
+
+function resetGame()
+{
+    alert("Spillet er over!");
+
+    eventLogList = [];
+    eventNumber = 0;
+    currentLevel = 1;
+
+
+    configureLevels();
+    loadLevel(1);
+    updateInputBar();
+
+
 }

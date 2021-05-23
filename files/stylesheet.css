@@ -1,7 +1,7 @@
 .gameArea
 {
     width: 1280px;
-    height: 720px;
+    height: 840px;
     display: grid;
     
     padding-top: 5%;
@@ -25,7 +25,13 @@
     grid-column-end: 10;
     grid-row-start: 1;
     grid-row-end: 6;
-    background-color: lightblue;
+    background-color: rgb(41, 41, 41);
+    background-image: url("maps/level1/background.png");
+    background-size: 600;
+    background-position: center;
+    background-repeat: no-repeat
+    ;
+    color: white;
 }
 
 .objectList
@@ -43,8 +49,9 @@
     grid-column-end: 12;
     grid-row-start: 6;
     grid-row-end: 7;
-    background-color:darkslategray;
+    background-color:rgb(44, 34, 13);
+    color: white;
 
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
 }
