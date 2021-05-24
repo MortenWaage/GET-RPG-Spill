@@ -4,7 +4,6 @@ var objectList;
 var inputBar;
 
 
-
 var eventLogList = [];
 var eventNumber = 1;
 var maxDisplayedEvents = 12;
@@ -15,11 +14,13 @@ var level1;
 var level2;
 var level3;
 
+
 var description
 var choice1;
 var choice2;
 var choice3;
 var choice4;
+
 
 // Denne funksjonen kjøres når siden først lastes. Lager en referanse til de forskjellige elementene så
 // Vi lett kan referere til de senere i koden.
