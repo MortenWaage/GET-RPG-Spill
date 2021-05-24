@@ -87,7 +87,7 @@ function selectMenuItem(choice)
     {
         eventLogList.push(eventNumber + ': ' + currentLevel.logEvent1);
 
-        window[currentLevel.choiceResult1](currentLevel.choiceParameter1.toString());
+        window[currentLevel.choiceFunction1](currentLevel.choiceParameter1.toString());
 
     }
 
@@ -97,7 +97,7 @@ function selectMenuItem(choice)
     {
         eventLogList.push(eventNumber + ': ' + currentLevel.logEvent2);
 
-        window[currentLevel.choiceResult2](currentLevel.choiceParameter2.toString());
+        window[currentLevel.choiceFunction2](currentLevel.choiceParameter2.toString());
 
     }
 
@@ -107,7 +107,7 @@ function selectMenuItem(choice)
     {
         eventLogList.push(eventNumber + ': ' + currentLevel.logEvent3);
 
-        window[currentLeve3.choiceResult2](currentLevel.choiceParameter3.toString());
+        window[currentLeve3.choiceFunction3](currentLevel.choiceParameter3.toString());
 
     }
 
@@ -116,7 +116,7 @@ function selectMenuItem(choice)
     {
         eventLogList.push(eventNumber + ': ' + currentLevel.logEvent4);
 
-        window[currentLeve3.choiceResult4](currentLevel.choiceParameter4.toString());
+        window[currentLeve3.choiceFunction4](currentLevel.choiceParameter4.toString());
       
     }
 
@@ -127,3 +127,6 @@ function selectMenuItem(choice)
     eventNumber++;
     updateEventLog();
 }
+
+
+

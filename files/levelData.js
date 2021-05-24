@@ -25,10 +25,10 @@ class Level
     logEvent3;
     logEvent4;
 
-    choiceResult1;
-    choiceResult2;
-    choiceResult3;
-    choiceResult4;
+    choiceFunction1;
+    choiceFunction2;
+    choiceFunction3;
+    choiceFunction4;
 
     choiceParameter1;
     choiceParameter2;
@@ -63,10 +63,10 @@ function configureLevels()
     level1.logEvent1 = "Du gikk ut døren";
     level1.logEvent2 = "Du la deg til å sove";
 
-    level1.choiceResult1 = "loadLevel";
+    level1.choiceFunction1 = "loadLevel";
     level1.choiceParameter1 = level1.nextLevel;
     
-    level1.choiceResult2 = "resetGame";
+    level1.choiceFunction2 = "resetGame";
     level1.choiceParameter2 = '';
 
 
@@ -89,9 +89,9 @@ function configureLevels()
     level2.logEvent1 = "Du fortsatte nedover veien";
     level2.logEvent2 = "Du gikk tilbake inn i huset";
 
-    level2.choiceResult1 = "loadLevel";
+    level2.choiceFunction1 = "loadLevel";
     level2.choiceParameter1 = level2.nextLevel;
-    level2.choiceResult2 = "loadLevel";
+    level2.choiceFunction2 = "loadLevel";
     level2.choiceParameter2 = level2.previousLevel;
 
 
@@ -109,7 +109,7 @@ function configureLevels()
 
     level3.logEvent1 = "Du gikk tilbake";
 
-    level3.choiceResult1 = "loadLevel";
+    level3.choiceFunction1 = "loadLevel";
     level3.choiceParameter1 = level3.previousLevel;
 }
 
