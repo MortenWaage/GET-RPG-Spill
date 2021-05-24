@@ -127,21 +127,3 @@ function selectMenuItem(choice)
     eventNumber++;
     updateEventLog();
 }
-
-
-
-function resetGame()
-{
-    alert("Spillet er over!");
-
-    eventLogList = [];
-    eventNumber = 0;
-    currentLevel = 1;
-
-
-    configureLevels();
-    loadLevel(1);
-    updateInputBar();
-
-
-}
