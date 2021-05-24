@@ -5,7 +5,8 @@ class Dialog
         this.init();
     }
 
-    currentChoiceOption;
+    enabled;
+    currentChoiceOption;    
 
     choiceText;
     eventLogText;

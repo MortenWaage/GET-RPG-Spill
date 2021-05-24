@@ -16,10 +16,7 @@ var level3;
 
 
 var description
-var choice1;
-var choice2;
-var choice3;
-var choice4;
+var choice = [];
 
 
 // Denne funksjonen kjøres når siden først lastes. Lager en referanse til de forskjellige elementene så
@@ -85,50 +82,27 @@ function updateInputBar()
     if (currentLevel.description != null)
         description = currentLevel.description;
 
-    inputBar.innerHTML = description + '<p></p>' + " --- Valg --- <p></p>";
+    inputBar.innerHTML = description + '<p></p>' + " --- Valg --- <p></p>";    
 
-
-    if (currentLevel.choice1 != null)
-    {
-        if (currentLevel.choice1.enabled == false)
-            return;
-
-        choice1 = currentLevel.choice1.choiceText;
-        inputBar.innerHTML +=  "1) " + choice1 + '<p></p>';
-    }        
     
-    if (currentLevel.choice2 != null)
+    for (c = 0; c < 4; c++)
     {
-        if (currentLevel.choice2.enabled == false)
-            return;
+        let _choice = "choice" + c.toString();   
 
-        choice2 = currentLevel.choice2.choiceText;
-        inputBar.innerHTML +=  "2) " + choice2 + '<p></p>';
-    }     
-    
-    if (currentLevel.choice3 != null)
-    {
-        if (currentLevel.choice3.enabled == false)
-            return;
-
-        choice3 = currentLevel.choice3.choiceText;
-        inputBar.innerHTML +=  "3) " + choice3 + '<p></p>';
-    }
-        
-    if (currentLevel.choice4 != null)
-    {
-        if (currentLevel.choice3.enabled == false)
-            return;
-
-        choice4 = currentLevel.choice4.choiceText;
-        inputBar.innerHTML +=  "4) " + choice4;
-    }     
-
+        if (currentLevel[_choice] != null)
+        {
+            if (currentLevel[_choice].enabled == false)
+                return;
+                        
+            choice[c] = currentLevel[_choice].choiceText;
+            inputBar.innerHTML +=  c + ") " + choice[c] + '<p></p>';
+        } 
+    }  
 }
 
 
 
-// Resetter spillet til slik det var ved start uansett hvor funksjonen kalles fra.
+// Resetter spillet til slik det var ved start
 function resetGame()
 {
     alert("Spillet er over!");
@@ -139,4 +113,16 @@ function resetGame()
     configureLevels();
     loadLevel(1);
     updateInputBar();
+}
+
+
+function changePropertyStatus(string)
+{
+    let array = [a, b] = string.split(",");
+    let _flag = false;
+
+    if (array[2] == "true")
+        _flag = true;
+
+    window["level" + array[0]]["choice" + array[1]].enabled = _flag;
 }

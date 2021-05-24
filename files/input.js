@@ -81,57 +81,18 @@ function getPlayerInput(e)
 function selectMenuItem(choice)
 {    
 
+    let _choice = "choice" + choice.toString();  
 
-    // Valg 1
-    if (choice == 1 && currentLevel.choice1 != null)
+    if (currentLevel[_choice] != null)
     {
-        if (currentLevel.choice1.enabled == false)
-            return;
-            
-        eventLogList.push(eventNumber + ': ' + currentLevel.choice1.eventLogText);
-
-        window[currentLevel.choice1.choiceFunction](currentLevel.choice1.choiceFunctionParameter.toString());
-
-    }
-
-
-    // Valg 2
-    else if (choice == 2 && currentLevel.choice2 != null)
-    {
-        if (currentLevel.choice2.enabled == false)
+        if (currentLevel[_choice].enabled == false)
             return;
 
-        eventLogList.push(eventNumber + ': ' + currentLevel.choice2.eventLogText);
+        eventLogList.push(eventNumber + ': ' + currentLevel[_choice].eventLogText);
 
-        window[currentLevel.choice2.choiceFunction](currentLevel.choice2.choiceFunctionParameter.toString());
-
+        if (currentLevel[_choice].choiceFunction != null)
+            window[currentLevel[_choice].choiceFunction](currentLevel[_choice].choiceFunctionParameter.toString());
     }
-
-
-    // Valg 3
-    else if (choice == 3 && currentLevel.choice3 != null)
-    {
-        if (currentLevel.choice3.enabled == false)
-            return;
-
-        eventLogList.push(eventNumber + ': ' + currentLevel.choice3.eventLogText);
-
-        window[currentLevel.choice3.choiceFunction](currentLevel.choice3.choiceFunctionParameter.toString());
-
-    }
-
-    // Valg 42
-    else if (choice == 4 && currentLevel.choice4.enabled == true)
-    {
-        if (currentLevel.choice4.enabled == false)
-            return;
-
-        eventLogList.push(eventNumber + ': ' + currentLevel.choice4.eventLogText);
-
-        window[currentLevel.choice4.choiceFunction](currentLevel.choice4.choiceFunctionParameter.toString());
-      
-    }
-
 
     else
         return;

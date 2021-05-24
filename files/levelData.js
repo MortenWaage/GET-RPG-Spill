@@ -65,7 +65,7 @@ function configureLevels()
     level1.choice3.enabled = false;
     level1.choice3.choiceTextList.push("Du ser en nøkkel på gulvet. Plukk den opp");
     level1.choice3.eventLogTextList.push("Du plukket opp nøkkelen");
-    level1.choice3.choiceFunctionList.push("enableDialogOption");      
+    level1.choice3.choiceFunctionList.push("pushDialogOption");      
     level1.choice3.choiceFunctionParameterList.push("3, 2");
 
     level1.choice1.ready();
@@ -119,11 +119,11 @@ function configureLevels()
     level3.choice1.choiceFunctionList.push("loadLevel");   
     level3.choice1.choiceFunctionParameterList.push("2");
 
-    level3.choice2.enabled = false;
-    level3.choice2.choiceTextList.push("Sett nøkkelen i låsen");
-    level3.choice2.eventLogTextList.push("Åpnet porten mot skogen");
-    level3.choice2.choiceFunctionList.push("loadLevel");   
-    level3.choice2.choiceFunctionParameterList.push("4");
+    level3.choice2.enabled = true;
+    level3.choice2.choiceTextList.push("Prøv å dytte opp porten");
+    level3.choice2.eventLogTextList.push("Porten rikker seg ikke");
+    level3.choice2.choiceFunctionList.push("changePropertyStatus");  
+    level3.choice2.choiceFunctionParameterList.push("1,3,true");
 
     level3.choice1.ready();
     level3.choice2.ready();
