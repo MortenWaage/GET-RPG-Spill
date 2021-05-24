@@ -87,10 +87,8 @@ function selectMenuItem(choice)
     {
         eventLogList.push(eventNumber + ': ' + currentLevel.logEvent1);
 
-        if (currentLevel.choiceParameter1 != null)
-            window[currentLevel.choiceResult1](currentLevel.choiceParameter1.toString());
-        else
-            window[currentLevel.choiceResult1]();
+        window[currentLevel.choiceResult1](currentLevel.choiceParameter1.toString());
+
     }
 
 
@@ -99,10 +97,8 @@ function selectMenuItem(choice)
     {
         eventLogList.push(eventNumber + ': ' + currentLevel.logEvent2);
 
-        if (currentLevel.choiceParameter2 != null)
-            window[currentLevel.choiceResult2](currentLevel.choiceParameter2.toString());
-        else
-            window[currentLevel.choiceResult2]();
+        window[currentLevel.choiceResult2](currentLevel.choiceParameter2.toString());
+
     }
 
 
@@ -111,10 +107,8 @@ function selectMenuItem(choice)
     {
         eventLogList.push(eventNumber + ': ' + currentLevel.logEvent3);
 
-        if (currentLevel.choiceParameter2 != null)
-            window[currentLeve3.choiceResult2](currentLevel.choiceParameter3.toString());
-        else
-            window[currentLevel.choiceResult3]();
+        window[currentLeve3.choiceResult2](currentLevel.choiceParameter3.toString());
+
     }
 
     // Valg 4
@@ -122,10 +116,8 @@ function selectMenuItem(choice)
     {
         eventLogList.push(eventNumber + ': ' + currentLevel.logEvent4);
 
-        if (currentLevel.choiceParameter4 != null)
-            window[currentLeve3.choiceResult4](currentLevel.choiceParameter4.toString());
-        else
-            window[currentLevel.choiceResult4]();        
+        window[currentLeve3.choiceResult4](currentLevel.choiceParameter4.toString());
+      
     }
 
 

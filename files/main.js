@@ -45,7 +45,6 @@ function init()
 
 
 // Oppdaterer hendelsesloggen med hva som har skjedd i spillet
-
 function updateEventLog()
 {
     eventLog.innerHTML = "Hendelseslogg:" + '<p></p>';
@@ -79,7 +78,7 @@ function loadLevel(level)
 
 
 
-
+// Oppdaterer informasjon på Inputbaren i forhold til hva som er spesifisert i hver level.
 function updateInputBar()
 {
     if (currentLevel.description != null)
@@ -112,4 +111,19 @@ function updateInputBar()
         inputBar.innerHTML +=  "4) " + choice4;
     }     
 
+}
+
+
+
+// Resetter spillet til slik det var ved start uansett hvor funksjonen kalles fra.
+function resetGame()
+{
+    alert("Spillet er over!");
+
+    eventLogList = [];
+    eventNumber = 0;
+
+    configureLevels();
+    loadLevel(1);
+    updateInputBar();
 }
