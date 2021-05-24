@@ -6,7 +6,9 @@ class Dialog
     }
 
     enabled;
-    currentChoiceOption;    
+    currentDialogOption;
+
+    harambe;
 
     choiceText;
     eventLogText;
@@ -20,6 +22,7 @@ class Dialog
     
     init()
     {
+        this.currentDialogOption = 0;
         this.choiceTextList = [];
         this.eventLogTextList = [];
         this.choiceFunctionList = [];
@@ -34,13 +37,14 @@ class Dialog
         this.choiceFunctionParameter = this.choiceFunctionParameterList[0];
     }
 
-    nextChoiceText()
-    {
-        this.currentChoiceOption++;
 
-        this.choiceText = this.choiceTextList[currentChoiceOption];
-        this.eventLogText = this.eventLogTextList[currentChoiceOption];
-        this.choiceFunction = this.choiceFunctionList[currentChoiceOption];
-        this.choiceFunctionParameter = this.choiceFunctionParameterList[currentChoiceOption]
+    setNextChoice()
+    {
+        this.currentDialogOption += 1;
+
+        this.choiceText = this.choiceTextList[this.currentDialogOption];
+        this.eventLogText = this.eventLogTextList[this.currentDialogOption];
+        this.choiceFunction = this.choiceFunctionList[this.currentDialogOption];
+        this.choiceFunctionParameter = this.choiceFunctionParameterList[this.currentDialogOption]
     }
 }

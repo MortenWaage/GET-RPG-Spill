@@ -27,10 +27,12 @@ class Level
 
 function configureLevels()
 {
+    
     // Lager en ny utgave av level-klassen for hver av variablene vi satte i main.js
     level1 = new Level();
     level2 = new Level();
     level3 = new Level();
+    level4 = new Level();
 
 
     // For hver av de nye levlene vi nå har laget så setter vi alle de relevant variablene for levelen.
@@ -66,7 +68,7 @@ function configureLevels()
     level1.choice3.choiceTextList.push("Du ser en nøkkel på gulvet. Plukk den opp");
     level1.choice3.eventLogTextList.push("Du plukket opp nøkkelen");
     level1.choice3.choiceFunctionList.push("pushDialogOption");      
-    level1.choice3.choiceFunctionParameterList.push("3, 2");
+    level1.choice3.choiceFunctionParameterList.push("3,2");
 
     level1.choice1.ready();
     level1.choice2.ready();
@@ -124,9 +126,33 @@ function configureLevels()
     level3.choice2.eventLogTextList.push("Porten rikker seg ikke");
     level3.choice2.choiceFunctionList.push("changePropertyStatus");  
     level3.choice2.choiceFunctionParameterList.push("1,3,true");
+    
+    level3.choice2.choiceTextList.push("Sett i nøkkelen");
+    level3.choice2.eventLogTextList.push("Porten lager en guffen lyd, men glir sakte opp");
+    level3.choice2.choiceFunctionList.push("loadLevel"); 
+    level3.choice2.choiceFunctionParameterList.push("4");
+
+    console.log(level3.choice2.currentChoiceOption);
 
     level3.choice1.ready();
     level3.choice2.ready();
+
+
+    level4.name = "Level 4 - Skogen";
+
+
+    level4.background = "files/maps/level4/background.png";
+    level4.description = "Du er ute i den store mørke skogen. Du hører ulver i det fjerne";
+    
+    level4.choice1 = new Dialog();
+
+    level4.choice1.enabled = true;
+    level4.choice1.choiceTextList.push("Gå tilbake");
+    level4.choice1.eventLogTextList.push("Du gikk tilbake gjennom porten");
+    level4.choice1.choiceFunctionList.push("loadLevel");   
+    level4.choice1.choiceFunctionParameterList.push("3");
+
+    level4.choice1.ready();
 }
 
 

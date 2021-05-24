@@ -10,10 +10,11 @@ var maxDisplayedEvents = 12;
 
 
 var currentLevel;
+
 var level1;
 var level2;
 var level3;
-
+var level4;
 
 var description
 var choice = [];
@@ -118,11 +119,22 @@ function resetGame()
 
 function changePropertyStatus(string)
 {
-    let array = [a, b] = string.split(",");
+    let _arguments = [a, b, c] = string.split(",");
     let _flag = false;
 
-    if (array[2] == "true")
+    if (_arguments[2] == "true")
         _flag = true;
 
-    window["level" + array[0]]["choice" + array[1]].enabled = _flag;
+    window["level" + _arguments[0]]["choice" + _arguments[1]].enabled = _flag;
+}
+
+
+function pushDialogOption(string) //"3,2"
+{
+    let _arguments = [a, b] = string.split(",");
+    console.log(_arguments[0] + ":" + _arguments[1]);
+
+    //console.log(window["level" + _arguments[0]]["choice" + _arguments[1]].currentChoiceOption);
+    //level3.choice2.setNextChoice();
+    window["level" + _arguments[0]]["choice" + _arguments[1]].setNextChoice();
 }
