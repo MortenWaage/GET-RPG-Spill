@@ -6,9 +6,9 @@ class Dialog
     }
 
     enabled;
-    currentDialogOption;
+    repeat;
 
-    harambe;
+    currentDialogOption;    
 
     choiceText;
     eventLogText;

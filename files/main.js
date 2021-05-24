@@ -129,7 +129,7 @@ function changePropertyStatus(string)
 }
 
 
-function pushDialogOption(string)
+function setNextDialogOption(string)
 {
     let _arguments = [a, b] = string.split(",");
     console.log(_arguments[0] + ":" + _arguments[1]);

@@ -75,6 +75,12 @@ function getPlayerInput(e)
 }
 
 
+// function runChoiceFunction(choice)
+// {
+//     if (level4.choice3.repeat == false)
+//         level2.choice1.enabled = false;
+
+// }
 
 
 // Utfører funksjonen til den knappen som ble trykket på
@@ -92,6 +98,12 @@ function selectMenuItem(choice)
 
         if (currentLevel[_choice].choiceFunction != null)
             window[currentLevel[_choice].choiceFunction](currentLevel[_choice].choiceFunctionParameter.toString());
+
+        if (currentLevel[_choice].repeat == false)
+        {
+            currentLevel[_choice].enabled = false;
+        }
+            
     }
 
     else
@@ -99,6 +111,7 @@ function selectMenuItem(choice)
 
     eventNumber++;
     updateEventLog();
+    updateInputBar();
 }
 
 

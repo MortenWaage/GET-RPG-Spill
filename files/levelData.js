@@ -37,7 +37,7 @@ function configureLevels()
 
 
 
-    
+
     // For hver av de nye levlene vi nå har laget så setter vi alle de relevant variablene for levelen.
     // Disse variablene er unike for hver "kopi" av en level, og kan nå hentes til ved å referer til den spesifikke levelen, punktum, og variabelnavnet.
     
@@ -74,6 +74,7 @@ function configureLevels()
 
     // Oppsett av valg nr.3
     level1.choice3.enabled = false;
+    level1.choice3.repeat = false;
     level1.choice3.choiceTextList.push("Du ser en nøkkel på gulvet. Plukk den opp");
     level1.choice3.eventLogTextList.push("Du plukket opp nøkkelen");
     level1.choice3.choiceFunctionList.push("setNextDialogOption");      
@@ -114,8 +115,6 @@ function configureLevels()
 
     level2.choice1.ready();
     level2.choice2.ready();
-
-
 
 
 
