@@ -91,10 +91,10 @@ function selectMenuItem(choice)
 
     if (currentLevel[_choice] != null)
     {
-        if (currentLevel[_choice].enabled == false)
+        if (currentLevel[_choice].enabled == false || currentLevel[_choice].eventLogText == null)
             return;
-
-        eventLogList.push(eventNumber + ': ' + currentLevel[_choice].eventLogText);
+        
+            eventLogList.push(eventNumber + ': ' + currentLevel[_choice].eventLogText);
 
         if (currentLevel[_choice].choiceFunction != null)
             window[currentLevel[_choice].choiceFunction](currentLevel[_choice].choiceFunctionParameter.toString());

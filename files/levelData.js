@@ -139,15 +139,13 @@ function configureLevels()
     level3.choice2.enabled = true;
     level3.choice2.choiceTextList.push("Prøv å dytte opp porten");
     level3.choice2.eventLogTextList.push("Porten rikker seg ikke");
-    level3.choice2.choiceFunctionList.push("changePropertyStatus");  
-    level3.choice2.choiceFunctionParameterList.push("1,3,true");
+    level3.choice2.choiceFunctionList.push("changeProperty");  
+    level3.choice2.choiceFunctionParameterList.push("1,3,true,enabled");
     
     level3.choice2.choiceTextList.push("Sett i nøkkelen");
     level3.choice2.eventLogTextList.push("Porten lager en guffen lyd, men glir sakte opp");
-    level3.choice2.choiceFunctionList.push("loadLevel"); 
-    level3.choice2.choiceFunctionParameterList.push("4");
-
-    console.log(level3.choice2.currentChoiceOption);
+    level3.choice2.choiceFunctionList.push("changeProperty");
+    level3.choice2.choiceFunctionParameterList.push("3,0,files/maps/level3/background2.png,background");
 
     level3.choice1.ready();
     level3.choice2.ready();
@@ -169,7 +167,7 @@ function configureLevels()
     level4.choice1 = new Dialog();
 
     level4.choice1.enabled = true;
-    level4.choice1.choiceTextList.push("Gå tilbake");
+    level4.choice1.choiceTextList.push("Gå tilbake gjennom porten");
     level4.choice1.eventLogTextList.push("Du gikk tilbake gjennom porten");
     level4.choice1.choiceFunctionList.push("loadLevel");   
     level4.choice1.choiceFunctionParameterList.push("3");

@@ -6,7 +6,7 @@ class Dialog
     }
 
     enabled;
-    repeat;
+    repeat; // if false, choice will be removed upon selection
 
     currentDialogOption;    
 
@@ -22,6 +22,7 @@ class Dialog
     
     init()
     {
+        //this.repeat = true;
         this.currentDialogOption = 0;
         this.choiceTextList = [];
         this.eventLogTextList = [];

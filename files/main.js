@@ -67,10 +67,18 @@ function loadLevel(level)
 {
     currentLevel = window["level" + level.toString()];
     updateInputBar();
+    updateEventLog();
+    updateLevel();
 
+
+
+}
+
+
+function updateLevel()
+{
     artArea.innerHTML = currentLevel.name;
     artArea.style.background = 'url(' + currentLevel.background + ')';
-
 }
 
 
@@ -96,7 +104,9 @@ function updateInputBar()
                 return;
                         
             choice[c] = currentLevel[_choice].choiceText;
-            inputBar.innerHTML +=  c + ") " + choice[c] + '<p></p>';
+            
+            if(choice[c] != null)
+                inputBar.innerHTML +=  c + ") " + choice[c] + '<p></p>';
         } 
     }  
 }
@@ -117,22 +127,44 @@ function resetGame()
 }
 
 
-function changePropertyStatus(string)
+
+
+
+
+function changeProperty(string) //"3,0,files/maps/level3/background2.png,background"
 {
-    let _arguments = [a, b, c] = string.split(",");
-    let _flag = false;
+    let _arguments = [a, b, c, d] = string.split(","); 
+    let _value = _arguments[2];
+
+    console.log(_arguments[2]);
+
 
     if (_arguments[2] == "true")
-        _flag = true;
+        _value = true;
+    if (_arguments[2] == "false")
+        _value = false;
 
-    window["level" + _arguments[0]]["choice" + _arguments[1]].enabled = _flag;
+    level = ["level" + _arguments[0]];
+    choice = ["choice" + _arguments[1]];
+    
+    if (_arguments[1] == 0)
+    {
+        window["level" + _arguments[0]][_arguments[3]] = _value;
+    }
+    else
+        window["level" + _arguments[0]]["choice" + _arguments[1]][_arguments[3]] = _value;
+    //window["level" + _arguments[0]]["choice" + _arguments[1]][_arguments[3]] = _value;
+
+    updateLevel()
 }
 
 
 function setNextDialogOption(string)
 {
     let _arguments = [a, b] = string.split(",");
-    console.log(_arguments[0] + ":" + _arguments[1]);
+    console.log(_arguments[0] + ":" + _arguments[1]);    
 
     window["level" + _arguments[0]]["choice" + _arguments[1]].setNextChoice();
+
+    
 }
