@@ -90,25 +90,37 @@ function updateInputBar()
 
     if (currentLevel.choice1 != null)
     {
-        choice1 = currentLevel.choice1;
+        if (currentLevel.choice1.enabled == false)
+            return;
+
+        choice1 = currentLevel.choice1.choiceText;
         inputBar.innerHTML +=  "1) " + choice1 + '<p></p>';
     }        
-        
+    
     if (currentLevel.choice2 != null)
     {
-        choice2 = currentLevel.choice2;
+        if (currentLevel.choice2.enabled == false)
+            return;
+
+        choice2 = currentLevel.choice2.choiceText;
         inputBar.innerHTML +=  "2) " + choice2 + '<p></p>';
     }     
     
     if (currentLevel.choice3 != null)
     {
-        choice3 = currentLevel.choice3;
+        if (currentLevel.choice3.enabled == false)
+            return;
+
+        choice3 = currentLevel.choice3.choiceText;
         inputBar.innerHTML +=  "3) " + choice3 + '<p></p>';
     }
         
     if (currentLevel.choice4 != null)
     {
-        choice4 = currentLevel.choice4;
+        if (currentLevel.choice3.enabled == false)
+            return;
+
+        choice4 = currentLevel.choice4.choiceText;
         inputBar.innerHTML +=  "4) " + choice4;
     }     
 

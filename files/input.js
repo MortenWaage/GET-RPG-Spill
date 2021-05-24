@@ -85,9 +85,12 @@ function selectMenuItem(choice)
     // Valg 1
     if (choice == 1 && currentLevel.choice1 != null)
     {
-        eventLogList.push(eventNumber + ': ' + currentLevel.logEvent1);
+        if (currentLevel.choice1.enabled == false)
+            return;
+            
+        eventLogList.push(eventNumber + ': ' + currentLevel.choice1.eventLogText);
 
-        window[currentLevel.choiceFunction1](currentLevel.choiceParameter1.toString());
+        window[currentLevel.choice1.choiceFunction](currentLevel.choice1.choiceFunctionParameter.toString());
 
     }
 
@@ -95,9 +98,12 @@ function selectMenuItem(choice)
     // Valg 2
     else if (choice == 2 && currentLevel.choice2 != null)
     {
-        eventLogList.push(eventNumber + ': ' + currentLevel.logEvent2);
+        if (currentLevel.choice2.enabled == false)
+            return;
 
-        window[currentLevel.choiceFunction2](currentLevel.choiceParameter2.toString());
+        eventLogList.push(eventNumber + ': ' + currentLevel.choice2.eventLogText);
+
+        window[currentLevel.choice2.choiceFunction](currentLevel.choice2.choiceFunctionParameter.toString());
 
     }
 
@@ -105,18 +111,24 @@ function selectMenuItem(choice)
     // Valg 3
     else if (choice == 3 && currentLevel.choice3 != null)
     {
-        eventLogList.push(eventNumber + ': ' + currentLevel.logEvent3);
+        if (currentLevel.choice3.enabled == false)
+            return;
 
-        window[currentLeve3.choiceFunction3](currentLevel.choiceParameter3.toString());
+        eventLogList.push(eventNumber + ': ' + currentLevel.choice3.eventLogText);
+
+        window[currentLevel.choice3.choiceFunction](currentLevel.choice3.choiceFunctionParameter.toString());
 
     }
 
-    // Valg 4
-    else if (choice == 4 && currentLevel.choice4 != null)
+    // Valg 42
+    else if (choice == 4 && currentLevel.choice4.enabled == true)
     {
-        eventLogList.push(eventNumber + ': ' + currentLevel.logEvent4);
+        if (currentLevel.choice4.enabled == false)
+            return;
 
-        window[currentLeve3.choiceFunction4](currentLevel.choiceParameter4.toString());
+        eventLogList.push(eventNumber + ': ' + currentLevel.choice4.eventLogText);
+
+        window[currentLevel.choice4.choiceFunction](currentLevel.choice4.choiceFunctionParameter.toString());
       
     }
 
