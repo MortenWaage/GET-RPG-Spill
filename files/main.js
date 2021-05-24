@@ -129,12 +129,10 @@ function changePropertyStatus(string)
 }
 
 
-function pushDialogOption(string) //"3,2"
+function pushDialogOption(string)
 {
     let _arguments = [a, b] = string.split(",");
     console.log(_arguments[0] + ":" + _arguments[1]);
 
-    //console.log(window["level" + _arguments[0]]["choice" + _arguments[1]].currentChoiceOption);
-    //level3.choice2.setNextChoice();
     window["level" + _arguments[0]]["choice" + _arguments[1]].setNextChoice();
 }

@@ -35,11 +35,20 @@ function configureLevels()
     level4 = new Level();
 
 
+
+
+    
     // For hver av de nye levlene vi nå har laget så setter vi alle de relevant variablene for levelen.
     // Disse variablene er unike for hver "kopi" av en level, og kan nå hentes til ved å referer til den spesifikke levelen, punktum, og variabelnavnet.
     
 
-    // Level 1
+
+
+
+    /**************************
+     *          Level 1       *
+     * ***********************/
+
     level1.name = "Level 1 - Hjemme.";
 
     level1.background = "files/maps/level1/background.png";
@@ -67,7 +76,7 @@ function configureLevels()
     level1.choice3.enabled = false;
     level1.choice3.choiceTextList.push("Du ser en nøkkel på gulvet. Plukk den opp");
     level1.choice3.eventLogTextList.push("Du plukket opp nøkkelen");
-    level1.choice3.choiceFunctionList.push("pushDialogOption");      
+    level1.choice3.choiceFunctionList.push("setNextDialogOption");      
     level1.choice3.choiceFunctionParameterList.push("3,2");
 
     level1.choice1.ready();
@@ -78,7 +87,9 @@ function configureLevels()
 
 
 
-    //Level 2
+    /**************************
+     *          Level 2       *
+     * ***********************/
 
     level2.name = "Level 2 - Hagen";
 
@@ -106,7 +117,12 @@ function configureLevels()
 
 
 
-    // Level 3
+
+
+    /**************************
+     *          Level 3       *
+     * ***********************/
+
     level3.name = "Level 3 - Porten.";
 
     level3.background = "files/maps/level3/background.png";    
@@ -137,6 +153,13 @@ function configureLevels()
     level3.choice1.ready();
     level3.choice2.ready();
 
+
+
+
+
+    /**************************
+     *          Level 4       *
+     * ***********************/
 
     level4.name = "Level 4 - Skogen";
 
